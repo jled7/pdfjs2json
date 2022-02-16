@@ -1,0 +1,43 @@
+{
+  "name": "pdfjs2json",
+  "version": "0.5.2",
+  "main": "main.js",
+  "scripts": {
+    "compileMain": "babel --presets es2015,stage-0 -d . main.js",
+    "compileLib": "babel --presets es2015,stage-0 -d ./lib ./lib",
+    "compile": "npm run compileMain && npm run compileLib",
+    "compileClean": "git checkout main.js ./lib",
+    "prepublish": "git add . && npm run compile",
+    "postpublish": "npm run compileClean"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "babel-runtime": "^6.26.0",
+    "uri-js": "^4.2.2",
+    "pdfjs-dist": "2.0.550"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Scrap24/pdfjs2json.git"
+  },
+  "keywords": [
+    "pdfjs",
+    "json",
+    "pdf"
+  ],
+  "bugs": {
+    "url": "https://github.com/Scrap24/pdfjs2json/issues"
+  },
+  "homepage": "https://github.com/Scrap24/pdfjs2json#readme"
+}
